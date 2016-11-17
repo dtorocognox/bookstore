@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Cien años de soledad",
+    "autor": "Gabriel García Márquez"
+  },
+  {
+    "name": "Los Miserables",
+    "autor": "Víctor Hugo"
+  },
+  {
+    "name": "Crimen y Castigo",
+    "autor": "Fiódor Dostoievskii"
+  },
+  {
+    "name": "El Principito",
+    "autor": "Antoine De Saint-Exupery"
+  }
+]
