@@ -10,3 +10,17 @@
 h1{
     padding: 20px;
 }
+
+.separator{
+    height: 30px;
+}
+
+.img-books{
+    height: 150px;
+    width: 100px;
+}
+
+.container-book{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

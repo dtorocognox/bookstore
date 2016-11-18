@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome!</title>
+    <title>Books</title>
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h3>Welcome</h3>
+        <div class="col-md-12">
+            <div class="jumbotron col-md-10">
+                <h3>Books</h3>
+                <div class="row">
+                    <div ng-repeat="book in books" class="col-md-3 container-book">
+                        <div><img ng-src="img/{{book.img}}.jpg" class="img-thumbnail img-books"/></div>
+                        <div><strong>{{book.name}}</strong></div>
+                        <div>{{book.author}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
 </body>
 </html>

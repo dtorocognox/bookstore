@@ -1,18 +1,22 @@
 [
   {
     "name": "Cien años de soledad",
-    "autor": "Gabriel García Márquez"
+    "author": "Gabriel García Márquez",
+    "img": "cien-años-de-soledad"
   },
   {
     "name": "Los Miserables",
-    "autor": "Víctor Hugo"
+    "author": "Víctor Hugo",
+    "img": "los-miserables"
   },
   {
     "name": "Crimen y Castigo",
-    "autor": "Fiódor Dostoievskii"
+    "author": "Fiódor Dostoievskii",
+    "img": "crimen-y-castigo"
   },
   {
     "name": "El Principito",
-    "autor": "Antoine De Saint-Exupery"
+    "author": "Antoine De Saint-Exupery",
+    "img": "el-principito"
   }
 ]

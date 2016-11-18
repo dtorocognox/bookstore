@@ -1,8 +1,21 @@
 /**
  * Created by dtoro on 17/11/2016.
  */
-
+var sCtrl = 0;
 var index = angular.module('MarketApp', ['ui.router']);
+
+index.controller('views', function($scope){
+    $scope.ctrl;
+    $scope.clickMe = function (ctrl1) {
+        $scope.ctrl = ctrl1;
+        sCtrl = $scope.ctrl;
+    } ;
+});
+
+index.controller('views2', function($scope){
+    $scope.mCtrl = sCtrl;
+
+});
 
 index.controller('login', function($scope, $http){
     $scope.email = [];
@@ -25,14 +38,30 @@ index.controller('login', function($scope, $http){
     }
 });
 
+index.controller('books', function ($scope, $http) {
+    $scope.books = getBooks();
+
+        function getBooks(){
+        var json = [];
+        $http.get("data/books.json")
+            .success(function (books) {
+                for(key in books){
+                    json.push(books[key]);
+                }
+            });
+            return json ;
+        }
+});
+
 
 index.config(function($stateProvider, $urlRouterProvider){
+
    $urlRouterProvider.otherwise('/login');
 
    $stateProvider
        .state('login', {
            url:"/login",
-           views:{
+           views: {
                "subview1": {
                    templateUrl: "html/login.html"
                }
@@ -45,30 +74,20 @@ index.config(function($stateProvider, $urlRouterProvider){
                    templateUrl: "html/home.html"
                },
                "subview2": {
-                   templatUrl: "html/home/welcome.html"
+                   templateUrl: "html/home/sidebar.html",
+                   controller: 'views'
+               },
+               "subview3": {
+                   templateUrl: "html/home/welcome.html",
+                   controller: 'books'
+               },
+               "subview4": {
+                   templateUrl: "html/home/profile.html"
                }
            }
        });
 });
 
-
-
-var home = angular.module('homePage', ['ngRouter']);
-
-home.controller('home', function ($http) {
-    //Get Books
-    $http.get("data/books.json")
-        .success(function (data){
-            console.log(data);
-        })
-});
-
-home.config(['$routeProvider', function($routeProvider){
-    $routeProvider
-        .when('/home', {
-            templateUrl: '../html/login.html'
-        })
-}]);
 
 
 
